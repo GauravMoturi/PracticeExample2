@@ -53,12 +53,12 @@ public class Hospital {
 		return null;
 	}
 
-	public void resignVolunteer(Volunteer v0) throws NoVolunteerException {
+	public void resignVolunteer(Volunteer v0) throws NoVolunteersException {
 		if (Volunteer.size() < 5) {
 			if (Volunteer.contains(v0) && Volunteer.size() > 1) {
 				this.Volunteer.remove(v0);
 			} else {
-				throw new NoVolunteerException();
+				throw new NoVolunteersException();
 			}
 		}
 	}
@@ -399,8 +399,8 @@ class NoSpaceException extends Exception {
 	}
 }
 
-class NoVolunteerException extends Exception {
-	public NoVolunteerException() {
+class NoVolunteersException extends Exception {
+	public NoVolunteersException() {
 		super();
 	}
 }
